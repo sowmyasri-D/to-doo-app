@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script src="https://kit.fontawesome.com/ea6d4fec5e.js" crossorigin="anonymus"></script>
+	<style type="text/css">
+		.list-type{
+			list-style: none;
+		}
+		.listitem{
+			font-size: 3rem;
+		}
+		*{
+			margin: 0%;
+		}
+		body{
+			background-image: url(https://media.istockphoto.com/id/1368469771/photo/flowering-branches-and-petals-on-a-blue-background-and-butterfly.jpg?b=1&s=170667a&w=0&k=20&c=Uxhv1cHbQXbbhUTk53jY61iPtDJxApSyfT1Z5jkGH7k=);
+			background-repeat: no-repeat;
+			text-align: center;
+			padding: 1%;
+			background-size: cover;
+		}
+		.div1{
+			border: 1px solid skyblue;
+			width: 45%;
+			background-color: white;
+			padding: 2%;
+			margin: auto;
+			margin-top: 18%;
+		}
+		.submit{
+			padding: 2%;
+			margin-top: 3%;
+		}
+		.submit:hover{
+			background-color: skyblue;
+			color:plum;
+		}
+	
+	</style>
+	<script type="text/javascript">
+		function todo() {
+			let newTodo=document.getElementById("newTodo").value
+			console.log(newTodo)
+			document.getElementById("newTodo").value=""
+			if(newTodo===""){
+				alert("Enter a todo")
+			}
+			else{
+				addTodo(newTodo)
+			}
+			addTodo(newTodo)
+		}
+		function addTodo(newValue){
+			let ul=document.querySelector("ul")
+			console.log(ul)
+			let li=document.createElement("li")
+			li.innerHTML=`
+			<span class="listitem">${newValue}
+			</span>
+			<i class="fa-solid fa-rectangle-xmark"></i>
+			`
+			li.classList.add("list-type")
+			ul.appendChild(li)
+		}
+	</script>
+</head>
+<body>
+	<div class="div1">
+	<input value="" id="newTodo" placeholder="Enter a todo"/>
+	<ul>
+	</ul>
+	<button class="submit" onclick="todo()">Submit</button>
+</div>
+</body>
+</html>
